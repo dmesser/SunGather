@@ -65,7 +65,7 @@ class export_influxdb(object):
             sequence.append(
                 influxdb_client.Point(measurement['point'])
                 .tag("inverter", inverter.getInverterModel(True))
-                .tag("serial", inverter.getInverterSerial(True))
+                .tag("serial", inverter.getSerialNumber(True))
                 .field(register, value)
             )
 
