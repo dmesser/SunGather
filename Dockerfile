@@ -1,4 +1,4 @@
-FROM python:3 as builder
+FROM python:3 AS builder
 
 RUN python3 -m venv /opt/virtualenv \
  && apt-get update \
@@ -6,6 +6,11 @@ RUN python3 -m venv /opt/virtualenv \
 
 COPY requirements.txt ./
 RUN /opt/virtualenv/bin/pip3 install --no-cache-dir -r requirements.txt
+
+COPY patch .
+
+RUN cd /opt/virtualenv/lib/python3.13/site-packages/ && \
+    patch -p1 < /patch
 
 FROM python:3-slim
 
