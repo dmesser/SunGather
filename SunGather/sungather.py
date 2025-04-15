@@ -89,6 +89,7 @@ def main():
         "scan_interval": configfile['inverter'].get('scan_interval',30),
         "connection": configfile['inverter'].get('connection',"modbus"),
         "model": configfile['inverter'].get('model',None),
+        "serial_number": configfile['inverter'].get('serial_number',None),
         "smart_meter": configfile['inverter'].get('smart_meter',False),
         "use_local_time": configfile['inverter'].get('use_local_time',False),
         "log_console": configfile['inverter'].get('log_console','WARNING'),
