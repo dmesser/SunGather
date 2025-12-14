@@ -1,18 +1,18 @@
-FROM python:3 AS builder
+FROM python:3.14 AS builder
 
 RUN python3 -m venv /opt/virtualenv \
- && apt-get update \
- && apt-get install build-essential
+    && apt-get update \
+    && apt-get install build-essential
 
 COPY requirements.txt ./
 RUN /opt/virtualenv/bin/pip3 install --no-cache-dir -r requirements.txt
 
 COPY patch .
 
-RUN cd /opt/virtualenv/lib/python3.13/site-packages/ && \
+RUN cd /opt/virtualenv/lib/python3.14/site-packages/ && \
     patch -p1 < /patch
 
-FROM python:3-slim
+FROM python:3.14-slim
 
 RUN useradd -r -m sungather
 
