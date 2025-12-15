@@ -1187,29 +1187,99 @@ registers:
       datatype: "U16"
       datarange:
         - response: 0x0000
-          value: "Running"
-        - response: 0x0002
+          value: "Running (On-grid)"
+        - response: 0x0040
+          value: "Running (On-grid)"
+        - response: 0x0014
+          value: "Microgrid Operation"
+        - response: 0x0400
+          value: "Running in maintain mode"
+        - response: 0x0800
+          value: "Running in compulsory mode"
+        - response: 0x1000
+          value: "Running (off-grid)"
+        - response: 0x2000
+          value: "Open loop"
+        - response: 0x4000
+          value: "Running in External EMS mode"
+        - response: 0x4001
+          value: "Emergency Charging Operation"
+        - response: 0x1111
+          value: "Uninitialized"
+        - response: 0x8000
           value: "Stop"
+        - response: 0x0001
+          value: "Stop"
+        - response: 0x1300
+          value: "Key stop"
+        - response: 0x0002
+          value: "Key stop"
+        - response: 0x1500
+          value: "Emergency Stop"
+        - response: 0x0004
+          value: "Emergency Stop"
+        - response: 0x1400
+          value: "Standby"
         - response: 0x0008
           value: "Standby"
+        - response: 0x1200
+          value: "Initial standby"
         - response: 0x0010
-          value: "Initial Standby"
+          value: "Initial standby"
+        - response: 0x1600
+          value: "Starting"
         - response: 0x0020
-          value: "Startup"
-        - response: 0x0040
-          value: "Run"
+          value: "Starting"
+        - response: 0x1800
+          value: "Intelligent Station Building Status"
+        - response: 0x9100
+          value: "Warn Running"
+        - response: 0x8100
+          value: "Derating Running"
+        - response: 0x0080
+          value: "Derating Running"
+        - response: 0x8200
+          value: "Dispatch Running"
+        - response: 0x5500
+          value: "Fault"
         - response: 0x0100
           value: "Fault"
-        - response: 0x0400
-          value: "Maintain Run"
-        - response: 0x0800
-          value: "Forced Run"
-        - response: 0x1000
-          value: "Off-grid Run"
+        - response: 0x1700
+          value: "AFCI self-test shutdown"
+        - response: 0x1900
+          value: "Safe Mode"
+        - response: 0x0041
+          value: "Off-grid Charge"
+        - response: 0x0200
+          value: "Update Failed"
+        - response: 0x2500
+          value: "Communicate fault"
         - response: 0x2501
           value: "Restarting"
-        - response: 0x4000
-          value: "EMS Run"
+        # - response: 0x0000
+        #   value: "Running"
+        # - response: 0x0002
+        #   value: "Stop"
+        # - response: 0x0008
+        #   value: "Standby"
+        # - response: 0x0010
+        #   value: "Initial Standby"
+        # - response: 0x0020
+        #   value: "Startup"
+        # - response: 0x0040
+        #   value: "Run"
+        # - response: 0x0100
+        #   value: "Fault"
+        # - response: 0x0400
+        #   value: "Maintain Run"
+        # - response: 0x0800
+        #   value: "Forced Run"
+        # - response: 0x1000
+        #   value: "Off-grid Run"
+        # - response: 0x2501
+        #   value: "Restarting"
+        # - response: 0x4000
+        #   value: "EMS Run"
       default: "Unknown"
       models: ["SH5K-20","SH3K6","SH4K6","SH5K-V13","SH5K-30","SH3K6-30","SH4K6-30","SH5.0RS","SH3.6RS","SH4.6RS","SH6.0RS","SH10RT","SH10RT-V112","SH10RT-20","SH8.0RT","SH6.0RT","SH5.0RT","SH5.0RT-V112"] 
     - name: "running_state"
