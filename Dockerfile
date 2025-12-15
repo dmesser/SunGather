@@ -18,14 +18,14 @@ RUN useradd -r -m sungather
 
 COPY --from=builder /opt/virtualenv /opt/virtualenv
 
+USER sungather
+
 WORKDIR /opt/sungather
 
-COPY SunGather/ .
+COPY --chown=sungather SunGather/ .
 
 VOLUME /logs
 VOLUME /config
-COPY SunGather/config-example.yaml /config/config.yaml
-
-USER sungather
+COPY --chown=sungather SunGather/config-example.yaml /config/config.yaml
 
 CMD [ "/opt/virtualenv/bin/python", "sungather.py", "-c", "/config/config.yaml", "-l", "/logs/" ]
